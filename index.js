@@ -12,9 +12,10 @@ connectDB();
 
 //for production
 app.use(cors({
-  origin: ["https://hostelgenie.netlify.app/"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
+  origin: 'https://hostelgenie.netlify.app', // Allow this origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies and other credentials
+  optionsSuccessStatus: 204 // Some legacy browsers choke on 204
 }));
 
 app.use(express.json({ extended: false }));
